@@ -1,0 +1,2447 @@
+{
+	"info": {
+		"_postman_id": "84d591f0-3c6c-4364-8154-8c22e4362b27",
+		"name": "loofer_api",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "27443374",
+		"_collection_link": "https://lively-capsule-686921.postman.co/workspace/Car-Rental~8c6c184c-c4b3-4a3f-81c2-4456d6799c86/collection/27443374-84d591f0-3c6c-4364-8154-8c22e4362b27?action=share&source=collection_link&creator=27443374"
+	},
+	"item": [
+		{
+			"name": "Admin",
+			"item": [
+				{
+					"name": "Product",
+					"item": [
+						{
+							"name": "Attributes",
+							"item": [
+								{
+									"name": "Create Attribute",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "16|u7N4SjBXaB8mBYcOyR1zShMzHsNqFkBcXYBg8JMe",
+													"type": "string"
+												}
+											]
+										},
+										"method": "POST",
+										"header": [
+											{
+												"key": "",
+												"value": "",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "formdata",
+											"formdata": [
+												{
+													"key": "name",
+													"value": "Size",
+													"type": "text"
+												},
+												{
+													"key": "type",
+													"value": "Size",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "{{looferlocal}}/admin/create_attribute",
+											"host": [
+												"{{looferlocal}}"
+											],
+											"path": [
+												"admin",
+												"create_attribute"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Add Value into attribute",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "16|u7N4SjBXaB8mBYcOyR1zShMzHsNqFkBcXYBg8JMe",
+													"type": "string"
+												}
+											]
+										},
+										"method": "POST",
+										"header": [
+											{
+												"key": "",
+												"value": "",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "formdata",
+											"formdata": [
+												{
+													"key": "attribute_value",
+													"value": "XL",
+													"type": "text"
+												},
+												{
+													"key": "attribute_id",
+													"value": "2",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "{{looferlocal}}/admin/create_attribute_value",
+											"host": [
+												"{{looferlocal}}"
+											],
+											"path": [
+												"admin",
+												"create_attribute_value"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Attribute Update",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "16|u7N4SjBXaB8mBYcOyR1zShMzHsNqFkBcXYBg8JMe",
+													"type": "string"
+												}
+											]
+										},
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "formdata",
+											"formdata": [
+												{
+													"key": "_method",
+													"value": "put",
+													"type": "text"
+												},
+												{
+													"key": "name",
+													"value": "Size22222",
+													"type": "text"
+												},
+												{
+													"key": "type",
+													"value": "Size",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "{{looferlocal}}/admin/update_attribute/2",
+											"host": [
+												"{{looferlocal}}"
+											],
+											"path": [
+												"admin",
+												"update_attribute",
+												"2"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Get all attributes",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "16|u7N4SjBXaB8mBYcOyR1zShMzHsNqFkBcXYBg8JMe",
+													"type": "string"
+												}
+											]
+										},
+										"method": "GET",
+										"header": [
+											{
+												"key": "",
+												"value": "",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "formdata",
+											"formdata": []
+										},
+										"url": {
+											"raw": "{{looferlocal}}/admin/get_all_attributes",
+											"host": [
+												"{{looferlocal}}"
+											],
+											"path": [
+												"admin",
+												"get_all_attributes"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Update attributes values",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "16|u7N4SjBXaB8mBYcOyR1zShMzHsNqFkBcXYBg8JMe",
+													"type": "string"
+												}
+											]
+										},
+										"method": "POST",
+										"header": [
+											{
+												"key": "",
+												"value": "",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "formdata",
+											"formdata": [
+												{
+													"key": "attribute_value",
+													"value": "XL",
+													"type": "text"
+												},
+												{
+													"key": "_method",
+													"value": "put",
+													"type": "text"
+												},
+												{
+													"key": "attribute_id",
+													"value": "2",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "{{looferlocal}}/admin/update_attributes_value/1",
+											"host": [
+												"{{looferlocal}}"
+											],
+											"path": [
+												"admin",
+												"update_attributes_value",
+												"1"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Add product attribute",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "16|u7N4SjBXaB8mBYcOyR1zShMzHsNqFkBcXYBg8JMe",
+													"type": "string"
+												}
+											]
+										},
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "formdata",
+											"formdata": [
+												{
+													"key": "product_id",
+													"value": "1",
+													"type": "text"
+												},
+												{
+													"key": "attribute_id",
+													"value": "1",
+													"type": "text"
+												},
+												{
+													"key": "attribute_value_id",
+													"value": "1",
+													"type": "text"
+												},
+												{
+													"key": "price_update",
+													"value": "80",
+													"description": "while the user choose this varient then this price will added with the base varient",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "{{looferlocal}}/admin/add_product_attribute",
+											"host": [
+												"{{looferlocal}}"
+											],
+											"path": [
+												"admin",
+												"add_product_attribute"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Add multiple product attribute images",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "16|u7N4SjBXaB8mBYcOyR1zShMzHsNqFkBcXYBg8JMe",
+													"type": "string"
+												}
+											]
+										},
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "formdata",
+											"formdata": [
+												{
+													"key": "product_attribute_id",
+													"value": "6",
+													"description": "Product Id",
+													"type": "text"
+												},
+												{
+													"key": "images[]",
+													"type": "file",
+													"src": "/D:/Downloads/243421843_228047549349850_6549084073075957117_n.jpg"
+												},
+												{
+													"key": "images[]",
+													"type": "file",
+													"src": "/D:/Downloads/Apple-iphone-13-PNG-758x473.jpg"
+												}
+											]
+										},
+										"url": {
+											"raw": "{{looferlocal}}/admin/add_product_attribute_images/",
+											"host": [
+												"{{looferlocal}}"
+											],
+											"path": [
+												"admin",
+												"add_product_attribute_images",
+												""
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Product attribute value update",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "16|u7N4SjBXaB8mBYcOyR1zShMzHsNqFkBcXYBg8JMe",
+													"type": "string"
+												}
+											]
+										},
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "formdata",
+											"formdata": [
+												{
+													"key": "product_id",
+													"value": "1",
+													"type": "text"
+												},
+												{
+													"key": "attribute_id",
+													"value": "1",
+													"type": "text"
+												},
+												{
+													"key": "attribute_value_id",
+													"value": "1",
+													"type": "text"
+												},
+												{
+													"key": "price_update",
+													"value": "250",
+													"type": "text"
+												},
+												{
+													"key": "discount",
+													"value": "60",
+													"type": "text",
+													"disabled": true
+												},
+												{
+													"key": "_method",
+													"value": "put",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "{{looferlocal}}/admin/update_product_attribute/6",
+											"host": [
+												"{{looferlocal}}"
+											],
+											"path": [
+												"admin",
+												"update_product_attribute",
+												"6"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "Create Products",
+							"protocolProfileBehavior": {
+								"disabledSystemHeaders": {
+									"accept": true
+								}
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "343|SVuNYyD7Zs5uf0b0bZIYSIJL1HU2eU9nD8TJ55YS59f35174",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "name",
+											"value": "mi note 5",
+											"type": "text"
+										},
+										{
+											"key": "product_type",
+											"value": "1",
+											"type": "text"
+										},
+										{
+											"key": "description",
+											"value": "4 GB RAM | 64 GB ROM | Expandable Upto 128 GB\n15.21 cm (5.99 inch) Full HD+ Display\n12MP Rear Camera | 5MP Front Camera\n4000 mAh Li Polymer Battery\nQualcomm Snapdragon 625 Processor",
+											"type": "text"
+										},
+										{
+											"key": "price",
+											"value": "12999",
+											"type": "text"
+										},
+										{
+											"key": "offer_price",
+											"value": "10999",
+											"type": "text"
+										},
+										{
+											"key": "features_image",
+											"type": "file",
+											"src": "/home/bhavani/Documents/Banner-03.jpg"
+										},
+										{
+											"key": "category_id",
+											"value": "6",
+											"type": "text"
+										},
+										{
+											"key": "sub_category_id",
+											"value": "",
+											"type": "text"
+										},
+										{
+											"key": "child_category_id",
+											"value": "",
+											"type": "text"
+										},
+										{
+											"key": "detail",
+											"value": "7y7y7",
+											"type": "text"
+										},
+										{
+											"key": "stock",
+											"value": "66",
+											"type": "text"
+										},
+										{
+											"key": "size",
+											"value": "x,m,l",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{local}}/admin/product_create",
+									"host": [
+										"{{local}}"
+									],
+									"path": [
+										"admin",
+										"product_create"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Edit Product ",
+							"protocolProfileBehavior": {
+								"disabledSystemHeaders": {
+									"accept": true
+								}
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "343|SVuNYyD7Zs5uf0b0bZIYSIJL1HU2eU9nD8TJ55YS59f35174",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "name",
+											"value": "Poco M3",
+											"type": "text"
+										},
+										{
+											"key": "product_type",
+											"value": "1",
+											"type": "text"
+										},
+										{
+											"key": "description",
+											"value": "GSM / HSPA / LTE\nLAUNCH\tAnnounced\t2020, July 07\nStatus\tAvailable. Released 2020, July 14\nBODY\tDimensions\t165.8 x 76.7 x 8.8 mm (6.53 x 3.02 x 0.35 in)\nWeight\t209 g (7.37 oz)\nBuild\tGlass front (Gorilla Glass 5), glass back (Gorilla Glass 5), plastic frame\nSIM\tDual SIM (Nano-SIM, dual stand-by)\n \tWater-repellent coating\nDISPLAY\tType\tIPS LCD, HDR10, 450 nits (typ)\nSize\t6.67 inches, 107.4 cm2 (~84.5% screen-to-body ratio)\nResolution\t1080 x 2400 pixels, 20:9 ratio (~395 ppi density)\nProtection\tCorning Gorilla Glass 5\nPLATFORM\tOS\tAndroid 10, MIUI 12\nChipset\tQualcomm SM7125 Snapdragon 720G (8 nm)\nCPU\tOcta-core (2x2.3 GHz Kryo 465 Gold & 6x1.8 GHz Kryo 465 Silver)\nGPU\tAdreno 618\nMEMORY\tCard slot\tmicroSDXC (dedicated slot)\nInternal\t64GB 4GB RAM, 64GB 6GB RAM, 128GB 6GB RAM\n \tUFS 2.1\nMAIN CAMERA\tQuad\t48 MP, f/1.8, 26mm (wide), 1/2.0\", 0.8µm, PDAF\n8 MP, f/2.2, 119˚ (ultrawide), 1/4.0\", 1.12µm\n5 MP, f/2.4, (macro), AF\n2 MP, f/2.4, (depth)\nFeatures\tLED flash, HDR, panorama\nVideo\t4K@30fps, 1080p@30/60/120fps, 720p@960fps, gyro-EIS\nSELFIE CAMERA\tSingle\t16 MP, f/2.5, (wide), 1/3.06\" 1.0µm\nFeatures\tHDR, panorama\nVideo\t1080p@30/120fps\nSOUND\tLoudspeaker\tYes\n3.5mm jack\tYes\nCOMMS\tWLAN\tWi-Fi 802.11 a/b/g/n/ac, dual-band, Wi-Fi Direct\nBluetooth\t5.0, A2DP, LE\nPositioning\tGPS, GLONASS, GALILEO, BDS\nNFC\tNo\nInfrared port\tYes\nRadio\tFM radio, recording\nUSB\tUSB Type-C 2.0, OTG\nFEATURES\tSensors\tFingerprint (side-mounted), accelerometer, gyro, proximity, compass\nBATTERY\tType\tLi-Po 5000 mAh, non-removable\nCharging\t33W wired\nMISC\tColors\tOut Of The Blue, Green and Greener, Two Shades of Black\nSAR EU\t0.91 W/kg (head)     0.56 W/kg (body)    \nPrice\tAbout 170 EUR",
+											"type": "text"
+										},
+										{
+											"key": "price",
+											"value": "16999",
+											"type": "text"
+										},
+										{
+											"key": "offer_price",
+											"value": "13999",
+											"type": "text"
+										},
+										{
+											"key": "features_image",
+											"type": "file",
+											"src": "/home/bhavani/Documents/Banner-03.jpg"
+										},
+										{
+											"key": "_method",
+											"value": "PUT",
+											"type": "text"
+										},
+										{
+											"key": "category_id",
+											"value": "7",
+											"type": "text"
+										},
+										{
+											"key": "sub_category_id",
+											"value": "6",
+											"type": "text"
+										},
+										{
+											"key": "child_category_id",
+											"value": "",
+											"type": "text"
+										},
+										{
+											"key": "detail",
+											"value": "tfgtf",
+											"type": "text"
+										},
+										{
+											"key": "stock",
+											"value": "8",
+											"type": "text"
+										},
+										{
+											"key": "size",
+											"value": "7,4",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{local}}/admin/edit_product/21",
+									"host": [
+										"{{local}}"
+									],
+									"path": [
+										"admin",
+										"edit_product",
+										"21"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete product",
+							"protocolProfileBehavior": {
+								"disabledSystemHeaders": {
+									"accept": true
+								}
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "17|V57Gj0xoAPN40qV7rLZMKvqwsPv8e4FDZiM3Jkdk",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{VarcelApp}}/admin/delete_product/6",
+									"host": [
+										"{{VarcelApp}}"
+									],
+									"path": [
+										"admin",
+										"delete_product",
+										"6"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Show all Product",
+							"protocolProfileBehavior": {
+								"disabledSystemHeaders": {
+									"accept": true
+								}
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "17|oGTO7BJpbw2D6niSwRpU2NINATeSVdlPM2BXH86g",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{looferlocal}}/admin/product_details/5",
+									"host": [
+										"{{looferlocal}}"
+									],
+									"path": [
+										"admin",
+										"product_details",
+										"5"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Add multiple product images",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "16|u7N4SjBXaB8mBYcOyR1zShMzHsNqFkBcXYBg8JMe",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "id",
+											"value": "1",
+											"description": "Product Id",
+											"type": "text"
+										},
+										{
+											"key": "images[]",
+											"type": "file",
+											"src": "/D:/Downloads/Apple-iphone-13-PNG-758x473.jpg"
+										},
+										{
+											"key": "images[]",
+											"type": "file",
+											"src": "/D:/Downloads/house_fairy_tale_art_light_night_101615_3840x2160.jpg"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{looferlocal}}/admin/add_images",
+									"host": [
+										"{{looferlocal}}"
+									],
+									"path": [
+										"admin",
+										"add_images"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Show a single product",
+							"protocolProfileBehavior": {
+								"disabledSystemHeaders": {
+									"accept": true
+								}
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "17|oGTO7BJpbw2D6niSwRpU2NINATeSVdlPM2BXH86g",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{looferlocal}}/admin/product_details/1",
+									"host": [
+										"{{looferlocal}}"
+									],
+									"path": [
+										"admin",
+										"product_details",
+										"1"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Banner",
+					"item": [
+						{
+							"name": "Create Banner",
+							"protocolProfileBehavior": {
+								"disabledSystemHeaders": {
+									"accept": true
+								}
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "74|laravel_sanctum_YN29oHZAxYrRoWQCKeOgkEetIk5lkxvKH8M4FAvAdf603edc",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "image",
+											"type": "file",
+											"src": "/D:/Downloads/243421843_228047549349850_6549084073075957117_n.jpg"
+										},
+										{
+											"key": "description",
+											"value": "Poco m2 Pro 6gbram 64 rom",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{VarcelApp}}/admin/banners",
+									"host": [
+										"{{VarcelApp}}"
+									],
+									"path": [
+										"admin",
+										"banners"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get all banners",
+							"protocolProfileBehavior": {
+								"disabledSystemHeaders": {
+									"accept": true
+								},
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "74|laravel_sanctum_YN29oHZAxYrRoWQCKeOgkEetIk5lkxvKH8M4FAvAdf603edc",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "image",
+											"type": "file",
+											"src": "/D:/Downloads/243421843_228047549349850_6549084073075957117_n.jpg"
+										},
+										{
+											"key": "description",
+											"value": "Poco m2 Pro 6gbram 64 rom",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{VarcelApp}}/admin/banners",
+									"host": [
+										"{{VarcelApp}}"
+									],
+									"path": [
+										"admin",
+										"banners"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete Banner",
+							"protocolProfileBehavior": {
+								"disabledSystemHeaders": {
+									"accept": true
+								}
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "74|laravel_sanctum_YN29oHZAxYrRoWQCKeOgkEetIk5lkxvKH8M4FAvAdf603edc",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{VarcelApp}}/admin/banners/8",
+									"host": [
+										"{{VarcelApp}}"
+									],
+									"path": [
+										"admin",
+										"banners",
+										"8"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Show Banner a single banner",
+							"protocolProfileBehavior": {
+								"disabledSystemHeaders": {
+									"accept": true
+								}
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "14|7PvVhs36oVdZpVDD7g023vnSkxR1xFAHcnE2T6iG",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{VarcelApp}}/admin/banners/{banner_id}",
+									"host": [
+										"{{VarcelApp}}"
+									],
+									"path": [
+										"admin",
+										"banners",
+										"{banner_id}"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update Banner",
+							"protocolProfileBehavior": {
+								"disabledSystemHeaders": {
+									"accept": true
+								}
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "74|laravel_sanctum_YN29oHZAxYrRoWQCKeOgkEetIk5lkxvKH8M4FAvAdf603edc",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "image",
+											"type": "file",
+											"src": "/D:/Downloads/243421843_228047549349850_6549084073075957117_n.jpg"
+										},
+										{
+											"key": "description",
+											"value": "super slendor",
+											"type": "text"
+										},
+										{
+											"key": "status",
+											"value": "1",
+											"description": "Not required but can be change",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{VarcelApp}}/admin/banners/update/6",
+									"host": [
+										"{{VarcelApp}}"
+									],
+									"path": [
+										"admin",
+										"banners",
+										"update",
+										"6"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "categories",
+					"item": [
+						{
+							"name": "Create Categories",
+							"protocolProfileBehavior": {
+								"disabledSystemHeaders": {
+									"accept": true
+								}
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "343|SVuNYyD7Zs5uf0b0bZIYSIJL1HU2eU9nD8TJ55YS59f35174",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "name",
+											"value": "Top Brandmn97",
+											"type": "text"
+										},
+										{
+											"key": "slug",
+											"value": "Cutton2mn97",
+											"type": "text"
+										},
+										{
+											"key": "description",
+											"value": "lorem ipsum dummy text",
+											"type": "text"
+										},
+										{
+											"key": "parent_id",
+											"value": "8",
+											"type": "text"
+										},
+										{
+											"key": "image",
+											"type": "file",
+											"src": "/home/bhavani/Documents/Banner-05.jpg"
+										},
+										{
+											"key": "sub_parent_id",
+											"value": "15",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{local}}/admin/categories",
+									"host": [
+										"{{local}}"
+									],
+									"path": [
+										"admin",
+										"categories"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Show categories",
+							"protocolProfileBehavior": {
+								"disabledSystemHeaders": {
+									"accept": true
+								}
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{looferlocal}}/admin/categories",
+									"host": [
+										"{{looferlocal}}"
+									],
+									"path": [
+										"admin",
+										"categories"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "category Update",
+							"protocolProfileBehavior": {
+								"disabledSystemHeaders": {
+									"accept": true
+								}
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "134|laravel_sanctum_KbIxVA6Z6WAhMkm481ivDJwv3NfQV9CtRJEf0ORW0b1bcbc0",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "name",
+											"value": "Cutton4",
+											"type": "text"
+										},
+										{
+											"key": "slug",
+											"value": "Cutton4",
+											"type": "text"
+										},
+										{
+											"key": "description",
+											"value": "lorem ipsum dummy text",
+											"type": "text"
+										},
+										{
+											"key": "parent_id",
+											"value": "8",
+											"type": "text"
+										},
+										{
+											"key": "image",
+											"type": "file",
+											"src": "/D:/Downloads/Apple-iphone-13-PNG-758x473.jpg"
+										},
+										{
+											"key": "sub_parent_id",
+											"value": "15",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{VarcelApp}}/admin/categories/update/12",
+									"host": [
+										"{{VarcelApp}}"
+									],
+									"path": [
+										"admin",
+										"categories",
+										"update",
+										"12"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "delete Categories",
+							"protocolProfileBehavior": {
+								"disabledSystemHeaders": {
+									"accept": true
+								}
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "134|laravel_sanctum_KbIxVA6Z6WAhMkm481ivDJwv3NfQV9CtRJEf0ORW0b1bcbc0",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": []
+								},
+								"url": {
+									"raw": "{{VarcelApp}}/admin/categories/12",
+									"host": [
+										"{{VarcelApp}}"
+									],
+									"path": [
+										"admin",
+										"categories",
+										"12"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "show single category",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "234|laravel_sanctum_GduideccXpzAj1rkD19xUuWiBgS66RD0CoSlTYPC8ea0a363",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{looferlocal}}/admin/categories/8",
+									"host": [
+										"{{looferlocal}}"
+									],
+									"path": [
+										"admin",
+										"categories",
+										"8"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Show categories products",
+							"protocolProfileBehavior": {
+								"disabledSystemHeaders": {
+									"accept": true
+								}
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "233|laravel_sanctum_cQ72a5ZtRcO3Gqr0JdhQXBvQfIYWzgQOaL5Qv1Cged7e5751",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{looferlocal}}/admin/category_products",
+									"host": [
+										"{{looferlocal}}"
+									],
+									"path": [
+										"admin",
+										"category_products"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete product images",
+							"protocolProfileBehavior": {
+								"disabledSystemHeaders": {
+									"accept": true
+								}
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "17|oGTO7BJpbw2D6niSwRpU2NINATeSVdlPM2BXH86g",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{looferlocal}}/admin/delete_image/1",
+									"host": [
+										"{{looferlocal}}"
+									],
+									"path": [
+										"admin",
+										"delete_image",
+										"1"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "users",
+					"item": [
+						{
+							"name": "All users",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "16|u7N4SjBXaB8mBYcOyR1zShMzHsNqFkBcXYBg8JMe",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{looferlocal}}/admin/all_users",
+									"host": [
+										"{{looferlocal}}"
+									],
+									"path": [
+										"admin",
+										"all_users"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Admin Login",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"accept": true
+						}
+					},
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "login",
+									"value": "8565478591",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "123456",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{local}}/login",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "logout",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"accept": true
+						}
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "14|C0jlpOlRDOpo5yjxU675FEDfxjucljj3KPDn5Uog",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{VarcelApp}}/logout",
+							"host": [
+								"{{VarcelApp}}"
+							],
+							"path": [
+								"logout"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"auth": {
+				"type": "bearer",
+				"bearer": [
+					{
+						"key": "token",
+						"value": "232|laravel_sanctum_H75vAdRorlql8Z2m0CGMeKUgSFRiPhDjml5NcyXg0100ab54",
+						"type": "string"
+					}
+				]
+			},
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "Auth",
+					"item": [
+						{
+							"name": "Login",
+							"protocolProfileBehavior": {
+								"disabledSystemHeaders": {
+									"accept": true
+								}
+							},
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "login",
+											"value": "8565478591",
+											"description": "email/phone",
+											"type": "text"
+										},
+										{
+											"key": "password",
+											"value": "12345678",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{looferlocal}}/login",
+									"host": [
+										"{{looferlocal}}"
+									],
+									"path": [
+										"login"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "forgot pasword",
+							"protocolProfileBehavior": {
+								"disabledSystemHeaders": {
+									"accept": true
+								}
+							},
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "phone",
+											"value": "7070649435",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{VarcelApp}}/forgot",
+									"host": [
+										"{{VarcelApp}}"
+									],
+									"path": [
+										"forgot"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "otp verification",
+							"protocolProfileBehavior": {
+								"disabledSystemHeaders": {
+									"accept": true
+								}
+							},
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "phone",
+											"value": "6545852515",
+											"type": "text"
+										},
+										{
+											"key": "otp",
+											"value": "1234",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{VarcelApp}}/otp_verification",
+									"host": [
+										"{{VarcelApp}}"
+									],
+									"path": [
+										"otp_verification"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "logout",
+							"protocolProfileBehavior": {
+								"disabledSystemHeaders": {
+									"accept": true
+								}
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "14|C0jlpOlRDOpo5yjxU675FEDfxjucljj3KPDn5Uog",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{VarcelApp}}/logout",
+									"host": [
+										"{{VarcelApp}}"
+									],
+									"path": [
+										"logout"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "User Registration",
+							"protocolProfileBehavior": {
+								"disabledSystemHeaders": {
+									"accept": true
+								}
+							},
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "name",
+											"value": "Mac Raikin",
+											"type": "text"
+										},
+										{
+											"key": "email",
+											"value": "user2@gmail.com",
+											"description": "not required",
+											"type": "text"
+										},
+										{
+											"key": "password",
+											"value": "123456789",
+											"type": "text"
+										},
+										{
+											"key": "mobile",
+											"value": "6545852515",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{VarcelApp}}/user/register",
+									"host": [
+										"{{VarcelApp}}"
+									],
+									"path": [
+										"user",
+										"register"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "reset_password",
+							"protocolProfileBehavior": {
+								"disabledSystemHeaders": {
+									"accept": true
+								}
+							},
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "otp",
+											"value": "1234",
+											"type": "text"
+										},
+										{
+											"key": "phone",
+											"value": "6545852515",
+											"type": "text"
+										},
+										{
+											"key": "password",
+											"value": "123456789",
+											"type": "text"
+										},
+										{
+											"key": "password_confirmation",
+											"value": "123456789",
+											"type": "text"
+										},
+										{
+											"key": "_method",
+											"value": "PUT",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{VarcelApp}}/reset_password",
+									"host": [
+										"{{VarcelApp}}"
+									],
+									"path": [
+										"reset_password"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "change_password",
+							"protocolProfileBehavior": {
+								"disabledSystemHeaders": {
+									"accept": true
+								}
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "26|sPopvDKKiEUknrffIgcCwcjrx1jecE6o4MOlp0gm",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "current_password",
+											"value": "123456789",
+											"type": "text"
+										},
+										{
+											"key": "new_password",
+											"value": "12345678",
+											"type": "text"
+										},
+										{
+											"key": "new_password_confirmation",
+											"value": "12345678",
+											"type": "text"
+										},
+										{
+											"key": "_method",
+											"value": "PUT",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{VarcelApp}}/change_password",
+									"host": [
+										"{{VarcelApp}}"
+									],
+									"path": [
+										"change_password"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Address",
+					"item": [
+						{
+							"name": "Create Address",
+							"protocolProfileBehavior": {
+								"disabledSystemHeaders": {
+									"accept": true
+								}
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "94|laravel_sanctum_g6GWMOsqJ3bNAqGBBESJ6UrMaWdu8YCvJPmRtSgB0e3411b5",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "address_line_1",
+											"value": "Talluguange",
+											"type": "text"
+										},
+										{
+											"key": "address_line_2",
+											"value": "no",
+											"type": "text"
+										},
+										{
+											"key": "address_line_3",
+											"value": "no",
+											"type": "text"
+										},
+										{
+											"key": "country",
+											"value": "India",
+											"type": "text"
+										},
+										{
+											"key": "state",
+											"value": "West Bangal",
+											"type": "text"
+										},
+										{
+											"key": "city",
+											"value": "kolkata",
+											"type": "text"
+										},
+										{
+											"key": "pin_code",
+											"value": "712148",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{VarcelApp}}/create_address",
+									"host": [
+										"{{VarcelApp}}"
+									],
+									"path": [
+										"create_address"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Edit Address",
+							"protocolProfileBehavior": {
+								"disabledSystemHeaders": {
+									"accept": true
+								}
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "94|laravel_sanctum_g6GWMOsqJ3bNAqGBBESJ6UrMaWdu8YCvJPmRtSgB0e3411b5",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "address_line_1",
+											"value": "Joypur (Mukular Bagan)",
+											"type": "text"
+										},
+										{
+											"key": "address_line_2",
+											"value": "no",
+											"type": "text"
+										},
+										{
+											"key": "address_line_3",
+											"value": "no",
+											"type": "text"
+										},
+										{
+											"key": "country",
+											"value": "INDIA",
+											"type": "text"
+										},
+										{
+											"key": "state",
+											"value": "West Bengal",
+											"type": "text"
+										},
+										{
+											"key": "city",
+											"value": "Mogra",
+											"type": "text"
+										},
+										{
+											"key": "pin_code",
+											"value": "712148",
+											"type": "text"
+										},
+										{
+											"key": "_method",
+											"value": "PUT",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{VarcelApp}}/edit_address/1",
+									"host": [
+										"{{VarcelApp}}"
+									],
+									"path": [
+										"edit_address",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Address Delete",
+							"protocolProfileBehavior": {
+								"disabledSystemHeaders": {
+									"accept": true
+								}
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "94|laravel_sanctum_g6GWMOsqJ3bNAqGBBESJ6UrMaWdu8YCvJPmRtSgB0e3411b5",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{VarcelApp}}/delete_address/3",
+									"host": [
+										"{{VarcelApp}}"
+									],
+									"path": [
+										"delete_address",
+										"3"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Show Address",
+							"protocolProfileBehavior": {
+								"disabledSystemHeaders": {
+									"accept": true
+								},
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "94|laravel_sanctum_g6GWMOsqJ3bNAqGBBESJ6UrMaWdu8YCvJPmRtSgB0e3411b5",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": []
+								},
+								"url": {
+									"raw": "{{VarcelApp}}/show_address",
+									"host": [
+										"{{VarcelApp}}"
+									],
+									"path": [
+										"show_address"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Product",
+					"item": [
+						{
+							"name": "Homepage",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{looferlocal}}/homepage",
+									"host": [
+										"{{looferlocal}}"
+									],
+									"path": [
+										"homepage"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Show single product",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{looferlocal}}/single_product/1",
+									"host": [
+										"{{looferlocal}}"
+									],
+									"path": [
+										"single_product",
+										"1"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Category",
+					"item": [
+						{
+							"name": "get menu category",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{looferlocal}}/get_menu_category",
+									"host": [
+										"{{looferlocal}}"
+									],
+									"path": [
+										"get_menu_category"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "get category product",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{looferlocal}}/get_category_product/6",
+									"host": [
+										"{{looferlocal}}"
+									],
+									"path": [
+										"get_category_product",
+										"6"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Cart",
+					"item": [
+						{
+							"name": "Add to cart",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "18|nA8Xrdp3Q0Q0jOMbZVAxqdoSF0zPp3OWtc7MFYB0",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "product_id",
+											"value": "1",
+											"type": "text"
+										},
+										{
+											"key": "quantity",
+											"value": "5",
+											"type": "text"
+										},
+										{
+											"key": "product_attributes",
+											"value": "",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{looferlocal}}/add_to_cart",
+									"host": [
+										"{{looferlocal}}"
+									],
+									"path": [
+										"add_to_cart"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update Cart",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "18|nA8Xrdp3Q0Q0jOMbZVAxqdoSF0zPp3OWtc7MFYB0",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "quantity",
+											"value": "3",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{looferlocal}}/update_cart/1",
+									"host": [
+										"{{looferlocal}}"
+									],
+									"path": [
+										"update_cart",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Show cart",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "18|nA8Xrdp3Q0Q0jOMbZVAxqdoSF0zPp3OWtc7MFYB0",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": []
+								},
+								"url": {
+									"raw": "{{looferlocal}}/cart",
+									"host": [
+										"{{looferlocal}}"
+									],
+									"path": [
+										"cart"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "{{local}}/get_product",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "category_id",
+							"value": "6",
+							"type": "text"
+						},
+						{
+							"key": "sub_category_id",
+							"value": "7",
+							"type": "text"
+						},
+						{
+							"key": "child_category_id",
+							"value": "",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{local}}/get_product",
+					"host": [
+						"{{local}}"
+					],
+					"path": [
+						"get_product"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "looferlocal",
+			"value": "https://loofer.bellazza.in/api",
+			"type": "string"
+		}
+	]
+}

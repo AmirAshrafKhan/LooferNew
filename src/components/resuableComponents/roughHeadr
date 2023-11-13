@@ -1,0 +1,77 @@
+ <div className="container-fluid">
+            <nav className="navbar navbar-expand-lg navbar-light bg-light shadow-sm p-3  bg-white ">
+                <Box className="navbar-brand">
+                    <img src={logo} alt="Mynta" className="coco mr-5" />
+                </Box>
+    {/* <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span className="navbar-toggler-icon"></span>
+    </button> */}
+
+    <div className="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul className="navbar-nav mr-auto flex-grow-1">
+            <li className="nav-item ">
+            <Box className="nav-link mr-2" href="#" onClick={() => {
+											dispatch(setTab('men'));
+											navigate('/');
+										}}>MEN</Box>
+            </li>
+            <li className="nav-item">
+                <Box className="nav-link mr-2" href="#"
+                onClick={() => {
+                    dispatch(setTab('women'));
+                    navigate('/women');
+                }}
+                >WOMEN</Box>
+            </li>
+            <li className="nav-item">
+                <Box className="nav-link mr-2" href="#" onClick={() => {
+											dispatch(setTab('kids'));
+											navigate('/kids');
+										}}>KIDS</Box>
+            </li>
+            <li className="nav-item">
+                <Box className="nav-link mr-2" href="#">HOME & LIVING</Box>
+            </li>
+            <li className="nav-item">
+                <Box className="nav-link mr-2" href="#">OFFERS</Box>
+            </li>
+
+        </ul>
+
+        {/* <div className="form-group has-search flex-grow-1">
+            <span className="fa fa-search form-control-feedback"></span>
+            <input type="text" className="form-control" placeholder="Search for Products Branda and More" />
+        </div> */}
+
+        <Box style={{ display: 'flex' }}>
+					<SearchIcon style={{ marginRight: 20 }} />
+					<FavoriteIcon
+						style={{ marginRight: 20, cursor: 'pointer' }}
+						onClick={() => navigate(
+							(localStorage.getItem("token")!=="undefined" && 
+							localStorage.getItem("token")!==null  && 
+							localStorage.getItem("token")!==undefined) ? 
+							"/mywishlist" :'/login')}
+					/>
+					<AccountCircleIcon
+						style={{ marginRight: 20, cursor: 'pointer' }}
+						onClick={() => navigate(
+							(localStorage.getItem("token")!=="undefined" && 
+							localStorage.getItem("token")!==null  && 
+							localStorage.getItem("token")!==undefined) ? 
+							"/profile" :'/login')}
+					/>
+					<LocalMallIcon
+						style={{ marginRight: 20, cursor: 'pointer' }}
+						onClick={() => navigate(
+							(localStorage.getItem("token")!=="undefined" && 
+							localStorage.getItem("token")!==null  && 
+							localStorage.getItem("token")!==undefined) ? 
+							"/cart" :'/login')}
+					/>
+				</Box>
+    </div>
+
+
+</nav>
+</div>

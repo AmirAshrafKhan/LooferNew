@@ -1,0 +1,77 @@
+.web-footerMount {
+  background-color: #f7f7f7;
+  padding: 20px 0;
+  text-align: center;
+}
+
+.usefulLinks {
+  padding-bottom: 20px;
+}
+
+.usefulLinks a {
+  color: #333;
+  text-decoration: none;
+  margin-right: 15px;
+  font-size: 14px;
+}
+
+.oShopping {
+  font-weight: bold;
+}
+
+.socialLinks {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.socialLinks h4 {
+  font-size: 16px;
+  margin-bottom: 15px;
+}
+
+.icon {
+  display: inline-block;
+  margin-right: 10px;
+  font-size: 24px;
+  color: #282c3f;
+}
+
+.lcContainer {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+.lcHeader {
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+.lcAddress {
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.lcLegalInfo {
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.lcTelephone {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.copyright {
+  font-size: 14px;
+  margin-top: 20px;
+}
+
+.pull-right {
+  float: right;
+}
+
+.highlightText {
+  color: #007bff;
+}

@@ -1,0 +1,114 @@
+@media (max-width: 320px) and (max-height: 564px) {
+  /* Menu container */
+  .desktop-navLink {
+    position: relative;
+  }
+
+  /* Main menu item */
+  .desktop-main {
+    text-decoration: none;
+    color: #333; /* Default text color for main menu items */
+    padding: 10px 10px; /* Adjust padding for smaller screens */
+    display: block; /* Change to block for stacked items on mobile */
+  }
+
+  /* Mega menu container */
+  .mega-menu {
+    position: relative; /* Change to relative position */
+    top: auto;
+    left: auto;
+    display: none; /* Hide mega menu initially */
+    width: 100%; /* Full width on mobile */
+    background-color: #fff;
+    border: 1px solid #ccc;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+  }
+
+  /* Mega menu item */
+  .mega-menu ul li {
+    padding: 10px 10px; /* Adjust padding for smaller screens */
+    list-style: none;
+  }
+
+  /* Style links in the mega menu */
+  .mega-menu a {
+    text-decoration: none;
+    color: #333;
+    display: block;
+    transition: color 0.2s ease-in-out;
+  }
+
+  /* Hover effect for mega menu links */
+  .mega-menu a:hover {
+    color: #ee5f73; /* Hover color */
+  }
+
+  /* Show the mega menu on click instead of hover */
+  .mega-menu-item .desktop-main:focus + .mega-menu {
+    display: block;
+  }
+
+  /* Search Bar and Icon */
+  .desktop-query {
+    display: flex;
+    align-items: center;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 5px;
+  }
+
+  /* Search Input Field */
+  .desktop-searchBar {
+    border: none;
+    outline: none;
+    padding: 10px;
+    flex: 1;
+    font-size: 14px;
+  }
+
+  /* Search Icon */
+  .desktop-iconSearch {
+    /* background-image: url('path-to-your-search-icon.png'); */
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+  }
+
+  /* Submit Button */
+  .desktop-submit {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+  }
+}
+.active-menu {
+  border-bottom: 2px solid red !important;
+}
+
+.modal-xl {
+  max-width: 990px;
+}
+.list-group-item-regular {
+  text-transform: lowercase;
+  display: block;
+  font-size: 12px;
+  text-decoration: none;
+  border: none;
+}
+
+.list-group-item-regular:hover {
+  text-transform: capitalize;
+  color: #3e4152;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  line-height: 25px;
+  font-weight: 700;
+  border: none;
+  font-size: 14px;
+  cursor: pointer;
+}

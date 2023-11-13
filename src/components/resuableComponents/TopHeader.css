@@ -1,0 +1,163 @@
+@media (max-width: 768px) {
+  .desktop-query {
+    padding: 8px;
+  }
+
+  .desktop-searchBar {
+    padding: 8px;
+    font-size: 12px;
+  }
+
+  /* Make the search icon smaller */
+  .desktop-iconSearch {
+    width: 16px;
+    height: 16px;
+  }
+
+  /* Adjust the padding for the menu items */
+  .desktop-categoryLink,
+  .desktop-categoryName {
+    padding: 8px 12px;
+  }
+
+  /* Adjust the font size for the menu items */
+  .desktop-categoryLink,
+  .desktop-categoryName,
+  .desktop-main {
+    font-size: 14px;
+  }
+
+  /* Make the menu buttons smaller */
+  .desktop-main {
+    padding: 8px 12px;
+  }
+
+  /* Add styles to stack the menu buttons vertically */
+  .nav-link {
+    margin-bottom: 8px;
+  }
+
+  /* Adjust the padding for the submenus */
+  .mega-menu-item .mega-menu ul li a {
+    padding: 8px 12px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .container {
+    max-width: 1400px;
+  }
+}
+
+.coco {
+  width: 60px;
+  /*border: 1px solid blue;*/
+}
+
+.nav-item {
+  font-weight: bold;
+  color: black;
+}
+
+.nav-item,
+.nav-link {
+  font-size: 17px;
+  color: black;
+}
+
+.has-search .form-control {
+  padding-left: 2.375rem;
+}
+
+.has-search .form-control-feedback {
+  position: absolute;
+  z-index: 2;
+  display: block;
+  width: 2.375rem;
+  height: 2.375rem;
+  line-height: 2.375rem;
+  text-align: center;
+  pointer-events: none;
+  color: #aaa;
+}
+
+input[type='text'] {
+  outline: none;
+  box-shadow: none !important;
+  border: 0px solid #ccc !important;
+}
+.remove-caret::after {
+  display: none !important;
+}
+
+@media (max-width: 320px) {
+  /* Adjust the font size and padding for smaller screens */
+  .desktop-query {
+    padding: 6px;
+  }
+
+  .desktop-searchBar {
+    padding: 6px;
+    font-size: 10px;
+  }
+
+  /* Make the search icon smaller */
+  .desktop-iconSearch {
+    width: 14px;
+    height: 14px;
+  }
+
+  /* Adjust the padding for the menu items */
+  .desktop-categoryLink,
+  .desktop-categoryName {
+    padding: 6px 10px;
+  }
+
+  /* Adjust the font size for the menu items */
+  .desktop-categoryLink,
+  .desktop-categoryName,
+  .desktop-main {
+    font-size: 12px;
+  }
+
+  /* Make the menu buttons smaller */
+  .desktop-main {
+    padding: 6px 10px;
+  }
+
+  /* Add styles to stack the menu buttons vertically */
+  .nav-link {
+    margin-bottom: 6px;
+  }
+
+  /* Adjust the padding for the submenus */
+  .mega-menu-item .mega-menu ul li a {
+    padding: 6px 10px;
+  }
+ .desktop-searchBar {
+    display: inline-block;
+    float: left;
+    font-size: 14px;
+    height: 20px;
+    line-height: 24px;
+    color: #696e79;
+    /* -webkit-box-sizing: content-box; */
+    box-sizing: content-box;
+    padding: 8px 10px 10px;
+    margin: 0;
+    outline: 0;
+    border: 1px solid #f5f5f6;
+    /* border-radius: 0 4px 4px 0; */
+    /* border-left: 0; */
+    background: #f5f5f6;
+    width: 15rem;
+    /* margin-right: 0px; */
+    border-left: none !important;
+}
+sup.desktop-newNavLinsup {
+  margin-left: -12px;
+  color: red;
+}
+
+}
+

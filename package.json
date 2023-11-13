@@ -1,0 +1,78 @@
+{
+  "proxy": "https://loofer.bellazza.in",
+  "name": "onlineshopping",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "-": "^0.0.1",
+    "@ant-design/icons": "^5.2.6",
+    "@emotion/react": "^11.11.1",
+    "@emotion/styled": "^11.11.0",
+    "@material-ui/core": "^4.12.4",
+    "@material-ui/icons": "^4.11.3",
+    "@mui/icons-material": "^5.14.3",
+    "@mui/material": "^5.14.4",
+    "@reduxjs/toolkit": "^1.9.5",
+    "@testing-library/jest-dom": "^5.17.0",
+    "@testing-library/react": "^13.4.0",
+    "@testing-library/user-event": "^13.5.0",
+    "antd": "^5.8.2",
+    "axios": "^1.4.0",
+    "base64json": "^1.0.3",
+    "bcrypt": "^5.1.1",
+    "bcryptjs": "^2.4.3",
+    "bootstrap": "^5.3.2",
+    "bs-stepper": "^1.7.0",
+    "fetch": "^1.1.0",
+    "formik": "^2.4.3",
+    "http-proxy-middleware": "^2.0.6",
+    "js-sha256": "^0.10.1",
+    "mdb-react-ui-kit": "^6.3.0",
+    "react": "^18.2.0",
+    "react-accessible-accordion": "^5.0.0",
+    "react-bootstrap": "^2.8.0",
+    "react-cookie-consent": "^8.0.1",
+    "react-cookies": "^0.1.1",
+    "react-dom": "^18.2.0",
+    "react-elastic-carousel": "^0.11.5",
+    "react-icons": "^4.11.0",
+    "react-redux": "^8.1.2",
+    "react-router-dom": "^6.15.0",
+    "react-scripts": "5.0.1",
+    "react-slick": "^0.29.0",
+    "react-ui-cards": "^3.1.0",
+    "redux": "^4.2.1",
+    "save-dev": "^0.0.1-security",
+    "simple-react-validator": "^1.6.2",
+    "styled-components": "^6.0.7",
+    "web-vitals": "^2.1.4",
+    "yup": "^1.2.0"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "teseft": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "tailwindcss": "^3.3.3"
+  }
+}
