@@ -24,6 +24,7 @@ import axios from "axios";
 import { addToCart, showCart, addToWishList } from "../reducers/action";
 import FooterMedia from "../components/resuableComponents/FooterMedia";
 import Form from "react-bootstrap/Form";
+import { Select, MenuItem } from "@material-ui/core";
 
 const top = [
   "https://prod-img.thesouledstore.com/public/theSoul/storage/mobile-cms-media-prod/product-images/looney-tunes.jpg?format=webp&w=360&dpr=1.3",
@@ -231,7 +232,7 @@ const ProductDetailPage = () => {
             {pDetailsItem?.data && <>{pDetailsItem?.data?.offer_price}</>}
             <br />
             <br />
-            <span>Please select a size</span>
+            <span>Available Sizes</span>
             <Box style={{ display: "flex", marginTop: 10 }}>
               {pDetailsItem?.data?.product_attributes?.map((i, index) => (
                 <Box
@@ -244,17 +245,38 @@ const ProductDetailPage = () => {
                     color: selectedSizeID == i.value ? "red" : "",
                   }}
                   onClick={(e) => {
-                    // console.log('iiiiiiiiiii', selectedSizeID)
+                    console.log("iiiiiiiiiii", selectedSizeID);
                     e.preventDefault();
                     setselectedSize(i?.value);
                     setselectedSizeID(i?.id);
                   }}
                 >
                   <span>{i?.value} </span>
-                  {/* {selectedSizeID == i.value?"Checkd":""} */}
+                  {selectedSizeID == i.value ? "Checkd" : ""}
                 </Box>
               ))}
             </Box>
+            {/* <Box style={{ display: "flex", marginTop: 10 }}>
+              <Select
+                value={selectedSizeID}
+                onChange={(e) => {
+                  const selectedSizeID = e.target.value;
+                  const selectedSize =
+                    pDetailsItem?.data?.product_attributes.find(
+                      (i) => i.id === selectedSizeID
+                    )?.value;
+                  setselectedSize(selectedSize);
+                  setselectedSizeID(selectedSizeID);
+                }}
+              >
+                {pDetailsItem?.data?.product_attributes?.map((i, index) => (
+                  <MenuItem key={i.id} value={i.id}>
+                    {i.value}
+                  </MenuItem>
+                ))}
+              </Select>
+            </Box> */}
+
             <Box mt={2}>Selected Size: {selectedSize || "Not selected"}</Box>
             <Box mt={2}>Select Qty.</Box>
 
