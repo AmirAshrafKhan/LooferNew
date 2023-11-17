@@ -16,7 +16,7 @@ import heart from "../../assets/images/heart.svg";
 import { productDetails } from "../../reducers/action";
 import { useDispatch, useSelector } from "react-redux";
 
-function ProductCards(props) {
+function FilterProductCards(props) {
   const [pDetailsCatItem, setpDetailsCatItem] = useState({});
   const [products, setProducts] = useState([]);
 
@@ -146,6 +146,7 @@ function ProductCards(props) {
   useEffect(() => {
     async function fetchData(productID) {
       console.log("we now know product id", productID);
+      const minmax = { min_price: "10000", max_price: "11000" };
       try {
         const response = await fetch(
           `https://loofer.bellazza.in/api/list-product`,
@@ -155,12 +156,13 @@ function ProductCards(props) {
               Accept: "application/json",
               "Content-Type": "application/json",
             },
-            body: JSON.stringify({ category_id: productID }),
+
+            body: JSON.stringify(minmax),
           }
         );
 
         var responseDate = await response.json();
-        console.log(responseDate.message, "responseproducts");
+        console.log(responseDate.message, "responsefilterproducts");
 
         if (
           responseDate !== undefined &&
@@ -297,4 +299,4 @@ function ProductCards(props) {
   );
 }
 
-export default ProductCards;
+export default FilterProductCards;

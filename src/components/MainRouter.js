@@ -34,6 +34,7 @@ import OrderDetailsPage from "../pages/OrderDetailsPage";
 import AddAddressPopup from "../pages/AddAddressPopup";
 import AddAddress from "../pages/AddAddress";
 import PaymentConfirmPage from "../pages/payment-confirm";
+import FilterProduct from "../pages/FilterProduct";
 
 const MainRouter = () => {
   return (
@@ -47,11 +48,13 @@ const MainRouter = () => {
         <Route path="/personal-care" exact element={<PersonalCare />} />
         <Route path="/login" exact element={<LoginPage />} />
         <Route path="/mywishlist" exact element={<MywistlistPage />} />
-      
+
         <Route path="/cart" exact element={<CartPage />} />
         <Route path="/address" exact element={<AddAddress />} />
 
         <Route path="/product/:id" exact element={<Product />} />
+        <Route path="/filterproduct" exact element={<FilterProduct />} />
+
         <Route path="/productdetail" exact element={<ProductDetailPage />} />
         <Route path="/contactus" exact element={<ContactUs />} />
         <Route path="/aboutus" exact element={<AboutUs />} />
@@ -63,8 +66,11 @@ const MainRouter = () => {
         <Route path="/submitdesign" exact element={<SubmitDesign />} />
         <Route path="/membership" exact element={<MemberShipPage />} />
         <Route path="/myprofile" exact element={<ProfilePage />} />
-        <Route path="/payment_confirmed" exact element={<PaymentConfirmPage />} />
-
+        <Route
+          path="/payment_confirmed"
+          exact
+          element={<PaymentConfirmPage />}
+        />
 
         <Route
           path="/order"
@@ -76,14 +82,17 @@ const MainRouter = () => {
             </>
           }
         ></Route>
-          <Route path="/orderdetailspage" exact element={
+        <Route
+          path="/orderdetailspage"
+          exact
+          element={
             <>
-             <Layout>
-                   <OrderDetailsPage />
-             </Layout>
-             </>
-       
-          } />
+              <Layout>
+                <OrderDetailsPage />
+              </Layout>
+            </>
+          }
+        />
         <Route
           path="/mygiftvocher"
           element={

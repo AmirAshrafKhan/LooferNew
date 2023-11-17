@@ -45,7 +45,7 @@ const LandingPage = () => {
 
   const [image, setImage] = useState(null);
   const [description, setDesciption] = useState("");
-  const [categoryInfo, setCategoryInfo] = useState([]);
+  const [categoryInfo, setCategoryInfo] = useState({});
   const [bestSelling, setBestSelling] = useState([]);
   const theme = useTheme();
   const matches = useMediaQuery(theme.breakpoints.down("sm"));
@@ -216,18 +216,20 @@ const LandingPage = () => {
       .then((response) => response.json())
       .then((res) => {
         console.log("havana oh na na ", res);
-        let category = [];
-        if (res) {
-          res.map((val) => {
-            category.push(val);
-          });
-          setCategoryInfo(category);
-          console.log("category info data", categoryInfo);
-        } else {
-          console.log("failed to resolve");
-        }
+        setCategoryInfo(res);
+        console.log("category information ", categoryInfo);
+        // let category = [];
+        // if (res) {
+        //   res.map((val) => {
+        //     category.push(val);
+        //   });
+        //   setCategoryInfo(category);
+        //   console.log("category info data", categoryInfo);
+        // } else {
+        //   console.log("failed to resolve");
+        // }
 
-        console.log("child cat", { res });
+        // console.log("child cat", { res });
       })
       .catch((err) => {
         console.error(err);
@@ -459,7 +461,14 @@ const LandingPage = () => {
                 return (
                   <>
                     <div className="col-sm-3 col-md-3">
-                      <img src={wo} width={"100%"} height={"310px"} />
+                      <img
+                        src={wo}
+                        width={"100%"}
+                        height={"310px"}
+                        onClick={() => {
+                          window.location.href = "/product/23";
+                        }}
+                      />
                     </div>
                   </>
                 );

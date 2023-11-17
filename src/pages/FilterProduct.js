@@ -18,9 +18,9 @@ import { useState } from "react";
 import { getProductByCategory } from "../reducers/action";
 import FooterMedia from "../components/resuableComponents/FooterMedia";
 import { ProductCard, UserCard } from "react-ui-cards";
-import ProductCards from "../components/resuableComponents/ProductCards";
+import FilterProductCards from "../components/resuableComponents/FilterProductCards";
 
-const Product = () => {
+const FilterProduct = () => {
   const theme = useTheme();
   const [productItems, setProductItems] = useState([
     [
@@ -123,94 +123,6 @@ const Product = () => {
   const { categoryProducts, status, error } = productByCategoryState;
 
   useEffect(() => {
-    // if (status === 'loading') {
-    // 	return <div>Loading...</div>;
-    //   } else if (status === 'succeeded') {
-    // 	// Render your data
-    // 	return <div>{categoryProducts}</div>;
-    //   } else if (status === 'failed') {
-    // 	return <div>Error: {error}</div>;
-    //   } else {
-    // 	return <div>Idle state</div>;
-    //   }
-
-    // dispatch(getProductByCategory());
-    // console.log(productsData.data.data,'productsData')
-    //   data=[{
-    //     "data": [
-    //         {
-    //             "id": 6,
-    //             "name": "shirts",
-    //             "products": [
-    //                 {
-    //                     "id": 5,
-    //                     "name": "Poco M3"
-    //                 },
-    //                 {
-    //                     "id": 9,
-    //                     "name": "mi note 5"
-    //                 },
-    //                 {
-    //                     "id": 10,
-    //                     "name": "mi note 5"
-    //                 }
-    //             ]
-    //         },
-    //         {
-    //             "id": 7,
-    //             "name": "Boots for efdsad",
-    //             "products": [
-    //                 {
-    //                     "id": 5,
-    //                     "name": "Poco M3"
-    //                 },
-    //                 {
-    //                     "id": 9,
-    //                     "name": "mi note 5"
-    //                 },
-    //                 {
-    //                     "id": 10,
-    //                     "name": "mi note 5"
-    //                 },
-    //                 {
-    //                     "id": 12,
-    //                     "name": "Casual Shirt"
-    //                 }
-    //             ]
-    //         },
-    //         {
-    //             "id": 8,
-    //             "name": "Jeans",
-    //             "products": []
-    //         },
-    //         {
-    //             "id": 9,
-    //             "name": "Denim",
-    //             "products": []
-    //         },
-    //         {
-    //             "id": 10,
-    //             "name": "Cutton",
-    //             "products": []
-    //         },
-    //         {
-    //             "id": 11,
-    //             "name": "Cutton3",
-    //             "products": []
-    //         },
-    //         {
-    //             "id": 13,
-    //             "name": "Cutton2",
-    //             "products": []
-    //         },
-    //         {
-    //             "id": 14,
-    //             "name": "Top Brand",
-    //             "products": []
-    //         }
-    //     ]
-    // }]
-
     var category_id = localStorage?.getItem("category_id");
     setCategoryId(category_id);
 
@@ -218,8 +130,8 @@ const Product = () => {
       console.log("we now know product id", productID);
       try {
         const response = await fetch(
-          // `https://loofer.bellazza.in/api/get_category_product/${productID}`,
-          `https://loofer.bellazza.in/api/list-product/${productID}`,
+          `https://loofer.bellazza.in/api/get_category_product/${productID}`,
+          // `https://loofer.bellazza.in/api/list-product/${productID}`,
           {
             method: "POST",
           }
@@ -249,6 +161,44 @@ const Product = () => {
 
     window.scrollTo(0, 0);
   }, []);
+
+  //   useEffect(() => {
+  //     async function fetchData(productID) {
+
+  //       try {
+  //         const response = await fetch(
+  //           `https://loofer.bellazza.in/api/list-product`,
+  //           {
+  //             method: "POST",
+  //             headers: {
+  //               Accept: "application/json",
+  //               "Content-Type": "application/json",
+  //             },
+  //             body: JSON.stringify({ MinimumPrice: MinPrice,
+  //             MaximumPrice: maxPrice }),
+  //           }
+  //         );
+
+  //         var responseDate = await response.json();
+  //         console.log(responseDate.message, "responseproducts");
+
+  //         if (
+  //           responseDate !== undefined &&
+  //           responseDate !== "undefined" &&
+  //           responseDate !== null
+  //         ) {
+  //           console.log(responseDate, "responsedate");
+  //           setProducts(responseDate.message);
+  //         }
+  //       } catch (error) {
+  //         console.log(error);
+  //       }
+  //     }
+
+  //     fetchData(productID);
+
+  //     window.scrollTo(0, 0);
+  //   }, [productID]);
 
   console.log("test set product", products);
 
@@ -354,25 +304,6 @@ const Product = () => {
                       window.location.href = "/product/9";
                     }}
                   />
-
-                  {/* <FormControlLabel
-                    sx={{
-                      ".MuiTypography-root": {
-                        fontSize: 13,
-                      },
-                    }}
-                    control={<Checkbox size="small" />}
-                    label="Pajamas"
-                  />
-                  <FormControlLabel
-                    sx={{
-                      ".MuiTypography-root": {
-                        fontSize: 13,
-                      },
-                    }}
-                    control={<Checkbox size="small" />}
-                    label="Pajamas"
-                  /> */}
                 </FormGroup>
               </Box>
               <Divider style={{ marginTop: 10, marginBottom: 10 }} />
@@ -525,7 +456,7 @@ const Product = () => {
             <span>Official Naruto Merchandise -</span>
 
             <span style={{ color: "rgb(135, 139, 148)" }}> Items</span>
-            <ProductCards />
+            <FilterProductCards />
 
             {/* {productItems.products && productItems.products.length}
 
@@ -552,4 +483,4 @@ const Product = () => {
   );
 };
 
-export default Product;
+export default FilterProduct;
