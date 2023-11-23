@@ -22,7 +22,7 @@ import ProductCards from "../components/resuableComponents/ProductCards";
 import SearchProductsCards from "../components/resuableComponents/SearchProductsCards";
 import { searchProduct } from "../reducers/action";
 
-const Product = () => {
+const SearchProduct = () => {
   const theme = useTheme();
   const [productItems, setProductItems] = useState([
     [
@@ -574,7 +574,7 @@ const Product = () => {
             <span style={{ color: "rgb(135, 139, 148)" }}> Items</span>
             {/* <ProductCards />
             <SearchProductsCards /> */}
-            {results.length > 0 ? <SearchProductsCards /> : <ProductCards />}
+            <SearchProductsCards />
 
             {/* {productItems.products && productItems.products.length}
 
@@ -601,4 +601,4 @@ const Product = () => {
   );
 };
 
-export default Product;
+export default SearchProduct;

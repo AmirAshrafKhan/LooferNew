@@ -401,6 +401,7 @@ const LandingPage = () => {
                   <>
                     <div className="col-sm-3 col-md-3">
                       <img
+                        style={{ cursor: "pointer" }}
                         src={man}
                         width={"100%"}
                         onClick={() => {
@@ -462,6 +463,7 @@ const LandingPage = () => {
                   <>
                     <div className="col-sm-3 col-md-3">
                       <img
+                        style={{ cursor: "pointer" }}
                         src={wo}
                         width={"100%"}
                         height={"310px"}
@@ -525,6 +527,7 @@ const LandingPage = () => {
                   <>
                     <div className="col-sm-3 col-md-3">
                       <img
+                        style={{ cursor: "pointer" }}
                         src={kid}
                         width={"100%"}
                         onClick={() => {

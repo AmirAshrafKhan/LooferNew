@@ -5,15 +5,20 @@ import Header from "../components/resuableComponents/Header";
 import LoginForm from "../forms/LoginForm";
 import WhislistCard from "../components/resuableComponents/WhislistCard";
 import FooterMedia from "../components/resuableComponents/FooterMedia";
-
+import { useLocation, useNavigate } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { addToCart, showCart } from "../reducers/action";
 const MywistlistPage = () => {
   const theme = useTheme();
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
 
   const matches = useMediaQuery(theme.breakpoints.down("md"));
 
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
+
   return (
     <>
       <Header />

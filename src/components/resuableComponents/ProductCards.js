@@ -240,6 +240,7 @@ function ProductCards(props) {
                   backgroundSize: "cover",
                   height: "350px",
                   // borderRadius: 10,
+                  cursor: "pointer",
                 }}
                 onClick={() => {
                   handleViewProduct(i.id);
@@ -252,6 +253,7 @@ function ProductCards(props) {
                       background: "white",
                       borderRadius: 25,
                       padding: 8,
+                      cursor: "pointer",
                     }}
                   />
                 </Box>
@@ -277,11 +279,11 @@ function ProductCards(props) {
                     &#8377;{i.price}
                   </span>
                 </Box>
-                <span>
+                {/* <span>
                   {" "}
                   &#8377;
                   {i.offer_price}
-                </span>
+                </span> */}
               </Box>
               {/* <Box
 							style={{

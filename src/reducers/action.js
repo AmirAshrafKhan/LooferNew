@@ -42,6 +42,24 @@ export const userLogin = createAsyncThunk("cart/userLogin", async (values) => {
   return response.data;
 });
 
+export const searchProduct = createAsyncThunk(
+  "searchProduct",
+  async (query) => {
+    const response = await api.post("/search", {
+      query,
+      headers: {
+        "X-CSRFToken": cookie.load("csrftoken"),
+        "Content-Type": "application/x-www-form-urlencoded",
+        "cache-control": "no-cache",
+      },
+      Authorization: `Bearer ${token}`,
+      Accept: "application/json",
+      body: JSON.stringify({ name: query }),
+    });
+    return response.data;
+  }
+);
+
 export const logOut = createAsyncThunk("cart/logOut", async () => {
   const response = await api.get("/logout");
   return response.data;

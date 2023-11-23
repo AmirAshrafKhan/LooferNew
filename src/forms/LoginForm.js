@@ -1,4 +1,4 @@
-import React, { useState,useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import * as Yup from "yup";
 // import { Formik,  Field } from 'formik';
 import { useFormik } from "formik";
@@ -12,14 +12,11 @@ import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import { useDispatch, useSelector } from "react-redux";
 import { loginUser, userLogin, userRegistration } from "../reducers/action";
-import cookie from 'react-cookies'
+import cookie from "react-cookies";
 
- var baseUrl= "https://loofer.bellazza.in/api"
+var baseUrl = "https://loofer.bellazza.in/api";
 //  var baseUrl= "http://127.0.0.1:8000/api"
 // var baseUrl= "http://api.loofer.in/api"
-
-
-
 
 const initialValues = {
   name: "",
@@ -51,27 +48,20 @@ const LoginForm = () => {
   const [step, setStep] = useState("one");
   const [resMsg, setresMsg] = useState("");
   const [loginResponse, setLoginResponse] = useState("");
-  
 
-  const { values, errors, touched, handleBlur, handleChange} =
-    useFormik({
-      initialValues: initialValues,
-      validationSchema: SignInSchema,
-      onSubmit: (values) => {
-        console.log(values, "values");
-      },
-    });
+  const { values, errors, touched, handleBlur, handleChange } = useFormik({
+    initialValues: initialValues,
+    validationSchema: SignInSchema,
+    onSubmit: (values) => {
+      console.log(values, "values");
+    },
+  });
 
-    useEffect(() => {
-     
-    
-    }, [])
-    
-    
-    const handleSubmit = (e)=>{
-      console.log("hi",e);
-    }
-    
+  useEffect(() => {}, []);
+
+  const handleSubmit = (e) => {
+    console.log("hi", e);
+  };
 
   // const handleRegistration=async()=>{
 
@@ -97,26 +87,24 @@ const LoginForm = () => {
   // const handleRegistration = async () => {
   //   // dispatch(userRegistration(values));
   //   // navigate("/");
-  
+
   //   const expires = new Date()
   //  expires.setDate(Date.now() + 1000 * 60 * 60 * 24 * 14)
- 
+
   // //  {
-          
-       
+
   //         // headers: {
-           
+
   //         //   "Content-Type": "application/x-www-form-urlencoded",
   //         //   "cache-control": "no-cache",
   //         // },
   // // }
 
-  
   // console.log("cookie.load", cookie.load("csrftoken"));
   //   try {
   //     const response = await axios
   //       .post(`${baseUrl}/user/register`, values ,  {  headers: {
-        
+
   //         'Content-Type': 'application/json',
   //       }})
   //       .then((response) => {
@@ -161,24 +149,24 @@ const LoginForm = () => {
   const handleRegistration = async () => {
     const expires = new Date();
     expires.setDate(Date.now() + 1000 * 60 * 60 * 24 * 14);
-  
+
     const headers = new Headers();
-    headers.append('Content-Type', 'application/json');
-   
-  
+    headers.append("Content-Type", "application/json");
+
     const requestOptions = {
-      method: 'POST',
+      method: "POST",
       headers: headers,
       body: JSON.stringify(values),
     };
-  
+
     try {
       const response = await fetch(`${baseUrl}/user/register`, requestOptions);
-  
+
       if (response.ok) {
         const responseData = await response.json();
         console.log(responseData, "response");
         setresMsg("Registration successful");
+        navigate("/");
       } else {
         console.error("Error occurred during registration");
         setresMsg("An error occurred during registration");
@@ -194,10 +182,9 @@ const LoginForm = () => {
   // const handleLogin = async () => {
   //   setLoginResponse("");
   //   try {
-      
-  
+
   //     // const loginResponse = await dispatch(loginUser({ login: values.mobile, password: values.password }));
-  
+
   //     // if (loginResponse.error) {
   //     //   console.log("Login Error:", loginResponse.error);
   //     //   setLoginResponse("Login failed. Please check your credentials.");
@@ -205,7 +192,7 @@ const LoginForm = () => {
   //     // }
   //     // console.log("what???",loginResponse?.payload.token)
   //     // const token = loginResponse?.payload.token;
-  
+
   //     const axiosConfig = {
   //       headers: {
   //         Accept: "application/json",
@@ -213,22 +200,22 @@ const LoginForm = () => {
   //         "cache-control": "no-cache",
   //       },
   //     };
-  
+
   //     const response = await axios.post(`${baseUrl}/login`, {
   //       login: values.mobile,
   //       password: values.password,
   //     }, axiosConfig);
-  
+
   //     console.log("Response:", response);
-  
+
   //     if (response.status === 200) {
   //       const userData = response.data.user;
-  
+
   //       localStorage.setItem("token", token);
   //       localStorage.setItem("user_id", userData.id);
   //       localStorage.setItem("user_name", userData.name);
   //       localStorage.setItem("user_email", userData.email);
-  
+
   //       navigate("/");
   //       setLoginResponse(response.data.message);
   //     } else {
@@ -236,7 +223,7 @@ const LoginForm = () => {
   //     }
   //   } catch (error) {
   //     console.error("Error:", error);
-  
+
   //     if (error.response) {
   //       const { data } = error.response;
   //       if (data && data.errors && data.errors.login) {
@@ -255,31 +242,31 @@ const LoginForm = () => {
     setLoginResponse("");
     try {
       const axiosConfig = {
-        method: 'POST',
+        method: "POST",
         headers: {
-          'Accept': 'application/json',
-          'Content-Type': 'application/x-www-form-urlencoded',
-          'cache-control': 'no-cache',
+          Accept: "application/json",
+          "Content-Type": "application/x-www-form-urlencoded",
+          "cache-control": "no-cache",
         },
         body: new URLSearchParams({
           login: values.mobile,
           password: values.password,
         }),
       };
-  
+
       const response = await fetch(`${baseUrl}/login`, axiosConfig);
-  
+
       if (response.ok) {
         const responseData = await response.json();
         console.log("Response:", responseData);
-  
+
         const userData = responseData.user;
-  
+
         localStorage.setItem("token", responseData.token);
         localStorage.setItem("user_id", userData.id);
         localStorage.setItem("user_name", userData.name);
         localStorage.setItem("user_email", userData.email);
-  
+
         navigate("/");
         setLoginResponse(responseData.message);
       } else {
@@ -287,7 +274,7 @@ const LoginForm = () => {
       }
     } catch (error) {
       console.error("Error:", error);
-  
+
       if (error.response) {
         const { data } = error.response;
         if (data && data.errors && data.errors.login) {
@@ -295,10 +282,14 @@ const LoginForm = () => {
         } else if (data && data.message) {
           setLoginResponse(data.message);
         } else {
-          setLoginResponse("An error occurred during login. Please try again later.");
+          setLoginResponse(
+            "An error occurred during login. Please try again later."
+          );
         }
       } else {
-        setLoginResponse("An error occurred during login. Please try again later.");
+        setLoginResponse(
+          "An error occurred during login. Please try again later."
+        );
       }
     }
   };

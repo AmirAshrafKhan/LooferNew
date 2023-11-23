@@ -162,8 +162,8 @@ const CartPage = ({ open, onClose, onSave }) => {
   useEffect(() => {
     console.log(showCarts, "showCartsshowCarts");
     dispatch(showCart());
-    dispatch(showAddress());
     handleGetAddress();
+    dispatch(showAddress());
 
     window.scrollTo(0, 0);
   }, [dispatch]);

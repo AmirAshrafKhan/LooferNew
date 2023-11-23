@@ -35,6 +35,8 @@ import AddAddressPopup from "../pages/AddAddressPopup";
 import AddAddress from "../pages/AddAddress";
 import PaymentConfirmPage from "../pages/payment-confirm";
 import FilterProduct from "../pages/FilterProduct";
+import SearchProductsCards from "./resuableComponents/SearchProductsCards";
+import SearchProduct from "../pages/SearchProduct";
 
 const MainRouter = () => {
   return (
@@ -48,6 +50,12 @@ const MainRouter = () => {
         <Route path="/personal-care" exact element={<PersonalCare />} />
         <Route path="/login" exact element={<LoginPage />} />
         <Route path="/mywishlist" exact element={<MywistlistPage />} />
+        <Route
+          path="/searchproductsCards"
+          exact
+          element={<SearchProductsCards />}
+        />
+        <Route path="/searchproducts" exact element={<SearchProduct />} />
 
         <Route path="/cart" exact element={<CartPage />} />
         <Route path="/address" exact element={<AddAddress />} />

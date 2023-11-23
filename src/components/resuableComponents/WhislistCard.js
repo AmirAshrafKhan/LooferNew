@@ -19,8 +19,84 @@ const WhislistCard = () => {
   const location = useLocation();
   const productID = location.pathname.split("/")[2];
 
+  const handleAddToCart = (productID) => {
+    let token = localStorage.getItem("token");
+    console.log(token, "token 123123");
+    if (token !== undefined && token !== "undefined" && token !== null) {
+      let items = {
+        product_id: `${productID}`,
+
+        _method: "POST",
+      };
+      dispatch(addToCart(items));
+      dispatch(showCart());
+
+      setTimeout(() => {
+        window.location.href = "/cart";
+      }, 2000);
+    } else {
+      navigate("/login");
+    }
+  };
+
   useEffect(() => {
     async function fetchData(productID) {
+      console.log("we now know product id", productID);
+      try {
+        const response = await fetch(
+          `https://loofer.bellazza.in/api/single_product/${productID}`
+        );
+
+        var responseDate = await response.json();
+        console.log(responseDate, "response");
+        console.log("{data:[responseDate.data]}", {
+          data: [responseDate.data],
+        });
+        // setpDetailsItem({data:[responseDate]});
+        var datanew = { data: [responseDate?.data] };
+
+        setPDetailsItem(responseDate);
+
+        console.log("ppppppppDetailsItem pDetailsItem", responseDate);
+
+        if (responseDate) {
+          // let datas = responseDate.products;
+        }
+      } catch (error) {
+        console.log(error);
+      }
+    }
+
+    fetchData(productID);
+  }, [productID]);
+
+  async function fetchCatProData(productID) {
+    console.log("we now know product id", productID);
+    try {
+      const response = await fetch(
+        `https://loofer.bellazza.in/api/get_category_product/${productID}`
+      );
+
+      var responseDate = await response.json();
+      console.log(responseDate, "response123");
+
+      if (
+        responseDate !== undefined &&
+        responseDate !== "undefined" &&
+        responseDate !== null
+      ) {
+        // let datas = responseDate.products;
+
+        setpDetailsCatItem(responseDate);
+        console.log(pDetailsCatItem, "response123 setpDetailsCatItem");
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  }
+
+  useEffect(() => {
+    async function fetchWishlistData(productID) {
       console.log("we now know product id", productID);
       try {
         const response = await fetch(
@@ -52,7 +128,7 @@ const WhislistCard = () => {
       }
     }
 
-    fetchData(productID);
+    fetchWishlistData(productID);
 
     window.scrollTo(0, 0);
   }, [productID]);
@@ -116,8 +192,10 @@ const WhislistCard = () => {
                         background: "white",
                         borderRadius: 25,
                         padding: 6,
+                        cursor: "pointer",
                       }}
-                      onClick={handleRemoveWishList}
+                      // onClick={handleRemoveWishList}
+                      onClick={console.log("removed croos")}
                     ></i>
                   </Box>
                 </Box>
@@ -158,7 +236,12 @@ const WhislistCard = () => {
                       color: "#117a7a",
                       fontWeight: "bold",
                       fontSize: 14,
+                      cursor: "pointer",
                     }}
+                    onClick={() =>
+                      handleAddToCart(pDetailsItem.data && pDetailsItem.data.id)
+                    }
+                    // onClick={console.log("addwishlist")}
                   >
                     MOVE TO CART
                   </span>
