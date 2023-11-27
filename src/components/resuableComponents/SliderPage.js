@@ -71,9 +71,21 @@ const SliderPage = ({ images }) => {
           );
         })}
       </Slider> */}
-      <Carousel showArrows={false} pagination={false}>
+      {/* <Carousel showArrows={false} pagination={false}>
         {BannerData?.map((imgDeets) => {
-          return <img src={imgDeets?.image_url} height="500px" width="100%" />;
+          return <img src={imgDeets?.image_url} height="500px" width="50%" />;
+        })}
+      </Carousel> */}
+      <Carousel showArrows={true} pagination={false}>
+        {BannerData?.map((imgDeets) => {
+          return (
+            <img
+              key={imgDeets.id}
+              src={imgDeets?.image_url}
+              style={{ width: "100%", objectFit: "cover", height: "500px" }}
+              alt={imgDeets.altText}
+            />
+          );
         })}
       </Carousel>
     </>
